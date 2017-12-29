@@ -1,0 +1,2 @@
+#Schema DDS
+CREATE DATABASE DDS;
