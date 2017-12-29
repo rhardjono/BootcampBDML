@@ -3,11 +3,3 @@ USE STAGE;
 #Para optimizar el cruce entre ODS.ODS_HC_CLIENTES y STAGE.STG_CONTACTOS_IVR
 ALTER TABLE STAGE.STG_CONTACTOS_IVR ADD INDEX ivr_tel_idx (PHONE_NUMBER ASC);
 ALTER TABLE STAGE.STG_CLIENTES_CRM ADD INDEX cli_tel_idx (PHONE ASC);
-
-#Para optimizar el cruce entre ODS.TMP_DIRECCIONES_PRODUCTOS2 y STAGE.STG_PRODUCTOS_CRM
-#ALTER TABLE STAGE.STG_PRODUCTOS_CRM ADD INDEX prod_custid_idx (CUSTOMER_ID ASC);
-#---> Ya creado en la fase#2-ODS ??
-
-#El campo ORDER es una palabra reservada, se modifica a ORDERS
-#ALTER TABLE STAGE.STG_ORDERS_CRM CHANGE COLUMN `ORDER` `ORDERS` VARCHAR(512) NULL DEFAULT NULL;
-#---> NO es necesario porque se puede escapar con la coma (`)
