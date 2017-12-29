@@ -2,8 +2,6 @@ Hay que ejecutar los scripts del siguiente paquete:
 #Fase STAGE: antes de 2/12/2017 
 KCTelecom.sql_Fase1_STAGE
 
-o
-
 #Fase ODS: despues de 2/12/2017 
 KCTelecom.sql_Fase2_ODS
 
