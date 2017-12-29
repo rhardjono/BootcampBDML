@@ -1,0 +1,19 @@
+Hay que ejecutar los scripts del siguiente paquete:
+#Fase STAGE: antes de 2/12/2017 
+KCTelecom.sql_Fase1_STAGE
+
+o
+
+#Fase ODS: despues de 2/12/2017 
+KCTelecom.sql_Fase2_ODS
+
+Se crean las tablas y se insertan los datos
+NOTA: Solo los scripts siguientes en sus corespondientes DB:
+CRM_CLIENTES.sql
+CRM_ORDERS.sql
+CRM_PRODUCTOS.sql
+FACTURADOR_FACTURAS.sql
+IVR_CONTACTOS.sql
+
+Si los scripts son anteriores a fecha 2/12/2017 a las 16h hay que ejecutar el siguiente script:
+01_OPERACIONAL_03_alterTable.sql
