@@ -1,11 +1,5 @@
 USE ODS;
 
-##########################################################################################################################
-
-#========================================================================================================================#
-# Insertar datos de Llamadas
-#========================================================================================================================#
-
 INSERT INTO ODS_HC_LLAMADAS (ID_IVR, TELEFONO_LLAMADA, ID_CLIENTE, FC_INICIO_LLAMADA, FC_FIN_LLAMADA, ID_DEPARTAMENTO_CC, FLG_TRANSFERIDO, ID_AGENTE_CC, FC_INSERT, FC_MODIFICACION)
 SELECT ID AS ID_IVR
 , CASE WHEN LENGTH(TRIM(PHONE_NUMBER))=10 THEN CAST(PHONE_NUMBER AS UNSIGNED INT) ELSE 9999999999 END TELEFONO_LLAMADA
