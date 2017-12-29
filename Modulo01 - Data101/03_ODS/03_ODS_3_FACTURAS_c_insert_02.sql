@@ -1,11 +1,5 @@
 USE ODS;
 
-##########################################################################################################################
-
-#========================================================================================================================#
-# Insertar datos de Facturas
-#========================================================================================================================#
-
 INSERT INTO ODS_HC_FACTURAS
 SELECT BILL_REF_NO AS ID_FACTURA
 , CASE WHEN TRIM(CLI.ID_CLIENTE)<>'' THEN CLI.ID_CLIENTE ELSE 999999999 END ID_CLIENTE
@@ -26,37 +20,3 @@ LEFT OUTER JOIN ODS.ODS_HC_CLIENTES CLI ON CLI.ID_CLIENTE=FACTURAS.CUSTOMER_ID
 COMMIT;
 
 ANALYZE TABLE ODS_HC_FACTURAS;
-
-
-#*************#
-#*	PRUEBAS  *#
-#*************#
-/*
-#BASE_ODS
-SELECT DISTINCT FAC.ID_CLIENTE, CLI.* FROM BASE_ODS.ODS_HC_FACTURAS FAC 
-INNER JOIN BASE_ODS.ODS_HC_CLIENTES CLI ON FAC.ID_CLIENTE = CLI.ID_CLIENTE
-WHERE FAC.id_cliente > 99999999
-ORDER BY FAC.id_cliente DESC
-;
-#---> Con Distinct: #2442
-#---> Sin Distinct: #48840
-
-#ODS
-SELECT DISTINCT FAC.ID_CLIENTE, CLI.* FROM ODS.ODS_HC_FACTURAS FAC 
-INNER JOIN ODS.ODS_HC_CLIENTES CLI ON FAC.ID_CLIENTE = CLI.ID_CLIENTE
-WHERE FAC.id_cliente > 99999999
-ORDER BY FAC.id_cliente DESC
-#---> Con Distinct: #1
-#---> Sin Distinct: #48840
-
-## === 	SERVICIOS === ##
-select count(*) from BASE_ODS.ODS_HC_SERVICIOS;	# 78495
-select count(*) from ODS.ODS_HC_SERVICIOS;		# 78467
-#---> Hay una diferencia de 28 registros originados en los clientes que existen 
-#     en stg_productos_crm y no en stg_clientes_crm
-
-SELECT * FROM BASE_ODS.ODS_HC_SERVICIOS SERV1
-LEFT OUTER JOIN ODS.ODS_HC_SERVICIOS SERV2 ON SERV1.ID_SERVICIO = SERV2.ID_SERVICIO
-WHERE SERV2.ID_SERVICIO IS NULL
-;
-*/
