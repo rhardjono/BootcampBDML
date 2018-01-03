@@ -3,7 +3,9 @@
 # debe existir una relacion 1 a 1 entre la entidad hijo con respecto a la entidad padre, por ejemplo debe suceder que una Ciudad pertenezca a un solo Estado y que un Estado pertenezca a su vez a un solo Pais.
 
 # Sin embargo, tras analizar los campos City y State de la tabla STAGE.STG_CLIENTES_CRM se ha observado la existencia de una Ciudad que pertenece a dos Estados diferentes. De este modo si consultasemos o filtrasemos
-# por dicha ciudad obtendriamos dos valores de Estados distintos
+# por dicha ciudad obtendriamos dos valores de Estados distintos.
+
+# No se puede establecer una relación de jerarquía entre Estado y Ciudad porque no hay una relación 1 a 1 entre la entidad hija con respecto a la entidad padre, en concreto existe una Ciudad que pertenece a dos Estados diferentes.
 
 # Esto lo podemos comprobar con la siguiente query que devuelve en numero de estados al que pertenece una ciudad:
 SELECT DISTINCT CITY, COUNT(*) TOTAL_STATES FROM (
@@ -27,11 +29,13 @@ ORDER BY TOTAL_STATES DESC;
 
 #COMENTARIO:
 /*
-No sería valido definir las dimensiones de Pais, Estado y Ciudad para luego a partir de ellas crear el modelo de Direcciones puesto que tendremos un campo PK autoincremental o como alternativa tener una clave compuesta??
-Aunque hay que tener un conocimiento del modelo de negocio... que hariamos si en un futuro tuviesemos un mismo estado en diferentes paises?. Por otro lado también existen direcciones(descripción con nombre y número) que pertenecen a una misma ciudad-estado...
-Al final veo que para el modelo de Dirección no 'importa' que haya una misma Ciudad para varios Estados o puede que un Estado para varios Paises puesto que el campo que identifica de forma univoca una Dirección es el Codigo_Postal...
+Cabe indicar que dentro de esa jerarquía de Direcciones podemos encontrarnos también que existen direcciones(descripción con nombre y número) que pertenecen a una misma ciudad-estado...
+Puede ser una opción alternativa de diseño, definir las dimensiones de Pais, Estado, Ciudad y CodigoPostal para luego a partir de ellas crear el modelo de Direcciones puesto que tendremos un campo PK autoincremental o como alternativa tener una PK compuesta.
+Aunque hay que tener un conocimiento del modelo de negocio... este planteamiento puede cubrir situaciones futuras en el que tuviesemos por ejemplo un mismo estado para diferentes paises.
+Por tanto, en el modelo de Dirección no 'importaría' que hubiese una misma Ciudad para varios Estados o un Estado para varios Paises puesto una Dirección quedaría identificado de forma univoca por estos campos
 */
 
+#EJEMPLOS:
 /*
 SELECT DE_DIRECCION, COUNT(*) TOTAL FROM ODS.ODS_HC_DIRECCIONES GROUP BY DE_DIRECCION ORDER BY TOTAL DESC;
 SELECT * FROM ODS.ODS_HC_DIRECCIONES WHERE DE_DIRECCION LIKE '9 TOBAN WAY';
