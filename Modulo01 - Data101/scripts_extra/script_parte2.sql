@@ -8,6 +8,7 @@
 # No se puede establecer una relación de jerarquía entre Estado y Ciudad porque no hay una relación 1 a 1 entre la entidad hija con respecto a la entidad padre, en concreto existe una Ciudad que pertenece a dos Estados diferentes.
 
 # Esto lo podemos comprobar con la siguiente query que devuelve en numero de estados al que pertenece una ciudad:
+
 SELECT DISTINCT CITY, COUNT(*) TOTAL_STATES FROM (
 	SELECT DISTINCT CITY, STATE FROM STAGE.STG_CLIENTES_CRM GROUP BY CITY, STATE HAVING CITY<>'' OR STATE<>'') CITIES_STATES
 GROUP BY CITY
@@ -30,7 +31,7 @@ ORDER BY TOTAL_STATES DESC;
 #COMENTARIO:
 /*
 Cabe indicar que dentro de esa jerarquía de Direcciones podemos encontrarnos también que existen direcciones(descripción con nombre y número) que pertenecen a una misma ciudad-estado...
-Puede ser una opción alternativa de diseño, definir las dimensiones de Pais, Estado, Ciudad y CodigoPostal para luego a partir de ellas crear el modelo de Direcciones puesto que tendremos un campo PK autoincremental o como alternativa tener una PK compuesta.
+Puede ser una opción de diseño alternativa, definir las dimensiones de Pais, Estado, Ciudad y CodigoPostal para luego a partir de ellas crear el modelo de Direcciones puesto que tendremos un campo PK autoincremental o como alternativa tener una PK compuesta.
 Aunque hay que tener un conocimiento del modelo de negocio... este planteamiento puede cubrir situaciones futuras en el que tuviesemos por ejemplo un mismo estado para diferentes paises.
 Por tanto, en el modelo de Dirección no 'importaría' que hubiese una misma Ciudad para varios Estados o un Estado para varios Paises puesto una Dirección quedaría identificado de forma univoca por estos campos
 */
