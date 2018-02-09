@@ -3,7 +3,35 @@ Data Exploration and Visualization
 
 La entrega de la práctica está compuesta por cuatro ficheros .twbx correspondientes a cada uno de los ejercicios:
 
-* KC_Practica1.twbx (Ejercicio#1)
-* KC_Practica2.twbx (Ejercicio#2)
-* KC_Practica3.twbx (Ejercicio#3)
-* KC_Practica4.twbx (Ejercicio#4)
+* Ejercicio#1
+  - Workbook:
+    KC_Practica1.twbx
+
+  - Extracto:
+    CriptoMercado.hyper
+
+  - NOTA: 
+    En el dashboard se ha habilitado los filtros de fecha(Año) y el parámetro de TopN.
+
+* Ejercicio#2
+  - Workbook:
+    KC_Practica2.twbx
+
+  - Extractos:
+    CriptoBlackMarket&Operations.hyper
+    CriptoBlackMarket.hyper
+    CriptoMarket.hyper
+
+* Ejercicio#3
+  - Workbook:
+    KC_Practica3.twbx
+
+  - Extracto:
+    CriptoMercado.hyper
+
+* Ejercicio#4
+  - Workbook:
+    KC_Practica4.twbx
+
+  - Extracto:
+    
