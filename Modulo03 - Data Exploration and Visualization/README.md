@@ -34,4 +34,4 @@ La entrega de la práctica está compuesta por cuatro ficheros .twbx correspondi
     KC_Practica4.twbx
 
   - Extracto:
-    
+    crypto-prices.hyper
