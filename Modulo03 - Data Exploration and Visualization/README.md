@@ -11,7 +11,7 @@ La entrega de la práctica está compuesta por cuatro ficheros .twbx correspondi
     CriptoMercado.hyper
 
   - NOTA: 
-    En el dashboard se ha habilitado los filtros de fecha(Año) y el parámetro de TopN.
+    En el dashboard se ha habilitado los filtros de fecha(Año) y del parámetro de TopN.
 
 * Ejercicio#2
   - Workbook:
