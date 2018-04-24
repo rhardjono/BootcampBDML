@@ -1,7 +1,7 @@
 # Módulo 07 - Spark & Scala
 
-Práctica Final de Spark & Scala
-===============================
+Práctica Final
+==============
 
 Este proyecto consiste en el desarrollo de una pseudo arquitectura lambda en el que se ha implementado la capa batch y la capa speed(streaming) y se ha dejado  la capa servicie como pendiente.
 
