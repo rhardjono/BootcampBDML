@@ -2,14 +2,14 @@
 
 * Práctica de Spark & Scala
 
-Este proyecto consiste en el desarrollo de una pseudo arquitectura lambda en el que se ha implementado la capa batch y la capa speed(streaming)  y se ha dejado  la capa servicie como pendiente.
-Este proyecto consiste en el desarrollo de una pseudo arquitectura lambda en el que se ha implementado la capa batch y la capa speed(streaming)  y se ha dejado  la capa servicie como pendiente.
+Este proyecto consiste en el desarrollo de una pseudo arquitectura lambda en el que se ha implementado la capa batch y la capa speed(streaming) y se ha dejado  la capa servicie como pendiente.
+
 A continuación se detallan algunos de los aspectos y funcionalidades más importantes a destacar:
 En la clase Metrics se recoge el cálculo de las métricas (KPIs) mediante consultas SQL (no se ha utilizado el API Dataframe) y las funciones de escriturá y lectura en los principales formatos de fichero. También ofrece ciertas funciones para enriquecer el dato durante el proceso de paseo:
 
-** Determinar la categoría a la que pertenece una transacción a partir de su descripción bajo criterio personal y manual.
+**Determinar la categoría a la que pertenece una transacción a partir de su descripción bajo criterio personal y manual.
 
-++ Determinar el país en el que se ha efectuado la transacción a partir de sus coordenadas geográficas: basado eln el proyecto Geocoder de KodiDev (https://github.com/KoddiDev/geocoder/blob/master/README.md) que crea un cliente para la APIde Google Maps.
+**Determinar el país en el que se ha efectuado la transacción a partir de sus coordenadas geográficas: basado eln el proyecto Geocoder de KodiDev (https://github.com/KoddiDev/geocoder/blob/master/README.md) que crea un cliente para la APIde Google Maps.
 
 Nota: el uso de de este cliente requiere de una clave personal de Google que estará activa hasta el final de la práctica.
 
