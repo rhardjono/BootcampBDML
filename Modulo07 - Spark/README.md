@@ -1,4 +1,4 @@
-# Módulo 7 - Spark & Scala
+# Módulo 07 - Spark & Scala
 
 Práctica Final de Spark & Scala
 ===============================
